@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Tariff } from '../models';
 
 @Component({
   selector: 'app-tariff',
@@ -9,4 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./tariff.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TariffComponent {}
+export class TariffComponent {
+  @Input() tariff!: Tariff;
+}

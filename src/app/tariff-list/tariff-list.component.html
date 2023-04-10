@@ -1,1 +1,4 @@
-<app-tariff *ngFor="let item of tariffList$ | async"></app-tariff>
+<app-tariff
+  *ngFor="let tariff of tariffList$ | async"
+  [tariff]="tariff"
+></app-tariff>
