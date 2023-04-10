@@ -1,13 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { TariffComponent } from '../tariff/tariff.component';
 
 @Component({
   standalone: true,
-  imports: [CommonModule],
+  imports: [TariffComponent],
   templateUrl: './tariff-list.component.html',
   styleUrls: ['./tariff-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TariffListComponent {
-
-}
+export class TariffListComponent {}
