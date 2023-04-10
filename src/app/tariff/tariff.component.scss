@@ -1,0 +1,152 @@
+@use "breakpoints" as *;
+@use "colors" as *;
+
+:host {
+  display: block;
+  border: 1px solid $border;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 20px 2fr 200px 2fr 1fr;
+
+  @include tablet {
+    grid-template-columns: 20px 1fr 140px 1fr;
+  }
+
+  @include mobile {
+    grid-template-columns: 20px auto 50px 145px;
+  }
+}
+
+.col {
+  &.-id {
+    border-right: 1px solid $border;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+
+    @include tablet {
+      align-items: flex-start;
+      border: none;
+    }
+  }
+
+  &.-name {
+    font-size: 18px;
+    padding: 16px;
+
+    @include mobile {
+      padding-left: 8px;
+    }
+  }
+
+  &.-speed {
+    padding: 16px 0;
+  }
+
+  &.-benefits {
+    padding: 16px 0;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &.-price {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+
+    @include tablet {
+      align-items: flex-end;
+    }
+
+    @include mobile {
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: stretch;
+    }
+  }
+}
+
+.button-label {
+  @include mobile {
+    display: none;
+  }
+}
+
+.speed {
+  & + & {
+    margin-top: 8px;
+  }
+
+  &.-upload {
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.speed-label {
+  margin-bottom: 4px;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.speed-info {
+  display: flex;
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.speed-direction {
+  background-color: rgb(202, 234, 248);
+
+  border-radius: 2px 0 0 2px;
+  padding: 6px 0;
+  width: 40px;
+  text-align: center;
+
+  .-upload & {
+    background-color: rgb(202, 248, 204);
+  }
+
+  @include mobile {
+    width: auto;
+    background: none;
+    padding: 0;
+    display: inline;
+  }
+}
+
+.speed-data {
+  width: 100px;
+  border: 1px solid $border;
+  border-left: none;
+  border-radius: 0 16px 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mobile {
+    width: auto;
+    background: none;
+    border: none;
+    display: inline;
+  }
+}
+
+.price-tag {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+
+  @include mobile {
+    margin-bottom: 0;
+    margin-right: 8px;
+  }
+}

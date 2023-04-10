@@ -1,4 +1,20 @@
+<div class="filters">
+  <label
+    >Sort by
+
+    <select [formControl]="sortingFC" class="select">
+      <option
+        *ngFor="let option of sortOptions | keyvalue"
+        [ngValue]="option.key"
+      >
+        {{ option.value }}
+      </option>
+    </select>
+  </label>
+</div>
+
 <app-tariff
   *ngFor="let tariff of tariffList$ | async"
   [tariff]="tariff"
+  class="tariff"
 ></app-tariff>

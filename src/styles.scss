@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  border: 0;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 1px solid rgb(37, 86, 199);
+  color: rgb(37, 86, 199);
+  padding: 8px;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background-color: rgb(37, 86, 199);
+    color: #fff;
+  }
+}
