@@ -1,3 +1,5 @@
+<h1>Compare internet tariffs</h1>
+
 <div class="filters">
   <label
     >Sort by
@@ -13,8 +15,10 @@
   </label>
 </div>
 
-<app-tariff
-  *ngFor="let tariff of tariffList$ | async"
-  [tariff]="tariff"
-  class="tariff"
-></app-tariff>
+<div class="list">
+  <app-tariff
+    *ngFor="let tariff of tariffList$ | async"
+    [tariff]="tariff"
+    class="tariff"
+  ></app-tariff>
+</div>

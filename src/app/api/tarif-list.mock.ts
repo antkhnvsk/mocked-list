@@ -1,7 +1,7 @@
 import { Tariff } from '../models';
 import { intRandomBetween, randomBetween } from '../utils';
 
-export const tariffList: Tariff[] = Array(5)
+export const mockTariffList: Tariff[] = Array(5)
   .fill(null)
   .map((_, i) => ({
     name: `Tariff ${i + 1} Name`,

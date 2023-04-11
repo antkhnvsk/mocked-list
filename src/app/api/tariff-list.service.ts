@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { tariffList } from './tarif-list.mock';
+import { mockTariffList } from './tarif-list.mock';
 import { SortType, Tariff } from '../models';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { SortType, Tariff } from '../models';
 export class TariffListService {
   getTarifList(sort: SortType): Observable<Tariff[]> {
     return new BehaviorSubject(
-      [...tariffList].sort((a, b) => {
+      [...mockTariffList].sort((a, b) => {
         switch (sort) {
           case SortType.Default:
             return 1;
