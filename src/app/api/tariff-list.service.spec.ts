@@ -20,8 +20,8 @@ describe('TariffListService', () => {
     let data: Tariff[];
 
     service
-      .getTarifList(SortType.Default)
-      .subscribe((tarifs) => (data = tarifs));
+      .getTariffList(SortType.Default)
+      .subscribe((tariffs) => (data = tariffs));
 
     expect(data!).toEqual(mockTariffList);
   });

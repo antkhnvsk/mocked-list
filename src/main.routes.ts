@@ -2,13 +2,13 @@ import { Routes } from '@angular/router';
 
 export default [
   {
-    path: 'tarifs',
+    path: 'tariffs',
     loadComponent: () =>
       import('./app/tariff-list').then((c) => c.TariffListComponent),
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'tarifs',
+    redirectTo: 'tariffs',
   },
 ] as Routes;

@@ -7,7 +7,7 @@ import { SortType, Tariff } from '../models';
   providedIn: 'root',
 })
 export class TariffListService {
-  getTarifList(sort: SortType): Observable<Tariff[]> {
+  getTariffList(sort: SortType): Observable<Tariff[]> {
     return new BehaviorSubject(
       [...mockTariffList].sort((a, b) => {
         switch (sort) {

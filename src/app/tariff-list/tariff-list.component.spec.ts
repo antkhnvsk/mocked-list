@@ -41,14 +41,14 @@ describe('TariffListComponent', () => {
   });
 
   it('should request data with choosen sorting filter', () => {
-    spyOn(tariffListService, 'getTarifList').and.callThrough();
+    spyOn(tariffListService, 'getTariffList').and.callThrough();
     const select = fixture.debugElement.query(By.css('.filters .select'));
 
     select.nativeElement.selectedIndex = 1;
     select.nativeElement.dispatchEvent(new Event('change'));
     fixture.detectChanges();
 
-    expect(tariffListService.getTarifList).toHaveBeenCalledWith(
+    expect(tariffListService.getTariffList).toHaveBeenCalledWith(
       SortType.Download
     );
   });

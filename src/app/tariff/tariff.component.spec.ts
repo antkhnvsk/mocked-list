@@ -6,7 +6,7 @@ import { LOCALE_ID } from '@angular/core';
 import { formatNumber } from '@angular/common';
 import { By } from '@angular/platform-browser';
 
-const mockTarif = mockTariffList[0];
+const mockTariff = mockTariffList[0];
 
 describe('TariffComponent', () => {
   let component: TariffComponent;
@@ -19,7 +19,7 @@ describe('TariffComponent', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(TariffComponent);
-    fixture.componentRef.setInput('tariff', mockTarif);
+    fixture.componentRef.setInput('tariff', mockTariff);
     component = fixture.componentInstance;
     fixture.detectChanges();
     locale = TestBed.inject(LOCALE_ID);
@@ -29,27 +29,27 @@ describe('TariffComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render tarif name', () => {
+  it('should render tariff name', () => {
     const name = fixture.debugElement.query(By.css('.col.-name'));
 
-    expect(name.nativeElement.textContent).toContain(mockTarif.name);
+    expect(name.nativeElement.textContent).toContain(mockTariff.name);
   });
 
-  it('should render tarif download speed', () => {
+  it('should render tariff download speed', () => {
     const speed = fixture.debugElement.query(
       By.css('.col.-speed .-download .speed-data')
     );
 
     expect(speed.nativeElement.textContent).toContain(
-      formatNumber(mockTarif.speedDownload, locale, '1.0-0')
+      formatNumber(mockTariff.speedDownload, locale, '1.0-0')
     );
   });
 
-  it('should render tarif price', () => {
+  it('should render tariff price', () => {
     const price = fixture.debugElement.query(By.css('.col.-price .price-tag'));
 
     expect(price.nativeElement.textContent).toContain(
-      formatNumber(mockTarif.price, locale, '1.0-2')
+      formatNumber(mockTariff.price, locale, '1.0-2')
     );
   });
 });

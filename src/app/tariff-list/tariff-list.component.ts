@@ -32,7 +32,7 @@ export class TariffListComponent {
   ngOnInit() {
     this.tariffList$ = this.sortingFC.valueChanges.pipe(
       startWith(this.sortingFC.value),
-      switchMap((sorting) => this.tariffListService.getTarifList(sorting))
+      switchMap((sorting) => this.tariffListService.getTariffList(sorting))
     );
   }
 }

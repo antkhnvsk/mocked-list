@@ -1,1 +1,1 @@
-export * from './tarif-list.mock';
+export * from './tariff-list.mock';
