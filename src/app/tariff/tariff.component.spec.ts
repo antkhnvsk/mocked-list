@@ -1,9 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TariffComponent } from './tariff.component';
-import { mockTariffList } from '../api/tarif-list.mock';
+import { mockTariffList } from '../mock';
 import { LOCALE_ID } from '@angular/core';
 import { formatNumber } from '@angular/common';
+import { By } from '@angular/platform-browser';
 
 const mockTarif = mockTariffList[0];
 
@@ -29,25 +30,25 @@ describe('TariffComponent', () => {
   });
 
   it('should render tarif name', () => {
-    const name = fixture.nativeElement.querySelector('.col.-name');
+    const name = fixture.debugElement.query(By.css('.col.-name'));
 
-    expect(name.textContent).toContain(mockTarif.name);
+    expect(name.nativeElement.textContent).toContain(mockTarif.name);
   });
 
   it('should render tarif download speed', () => {
-    const speed = fixture.nativeElement.querySelector(
-      '.col.-speed .-download .speed-data'
+    const speed = fixture.debugElement.query(
+      By.css('.col.-speed .-download .speed-data')
     );
 
-    expect(speed.textContent).toContain(
+    expect(speed.nativeElement.textContent).toContain(
       formatNumber(mockTarif.speedDownload, locale, '1.0-0')
     );
   });
 
   it('should render tarif price', () => {
-    const price = fixture.nativeElement.querySelector('.col.-price .price-tag');
+    const price = fixture.debugElement.query(By.css('.col.-price .price-tag'));
 
-    expect(price.textContent).toContain(
+    expect(price.nativeElement.textContent).toContain(
       formatNumber(mockTarif.price, locale, '1.0-2')
     );
   });

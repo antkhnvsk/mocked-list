@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TariffListComponent } from './tariff-list.component';
-import { mockTariffList } from '../api/tarif-list.mock';
+import { mockTariffList } from '../mock';
 import { SortType, sortOptions } from '../models';
 import { TariffListService } from '../api';
 import { By } from '@angular/platform-browser';
@@ -27,17 +27,17 @@ describe('TariffListComponent', () => {
   });
 
   it('should render list of tariffs', () => {
-    const allTariffs = fixture.nativeElement.querySelectorAll('app-tariff');
+    const tariffs = fixture.debugElement.queryAll(By.css('app-tariff'));
 
-    expect(allTariffs.length).toEqual(mockTariffList.length);
+    expect(tariffs.length).toEqual(mockTariffList.length);
   });
 
   it('should have sorting options', () => {
-    const allSortingOptions = fixture.nativeElement.querySelectorAll(
-      '.filters .select option '
+    const options = fixture.debugElement.queryAll(
+      By.css('.filters .select option')
     );
 
-    expect(allSortingOptions.length).toEqual(sortOptions.size);
+    expect(options.length).toEqual(sortOptions.size);
   });
 
   it('should request data with choosen sorting filter', () => {

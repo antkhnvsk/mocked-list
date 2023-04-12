@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { mockTariffList } from './tarif-list.mock';
+import { mockTariffList } from '../mock';
 import { SortType, Tariff } from '../models';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class TariffListService {
       [...mockTariffList].sort((a, b) => {
         switch (sort) {
           case SortType.Default:
-            return 1;
+            return 0;
 
           case SortType.Download:
             return b.speedDownload - a.speedDownload;

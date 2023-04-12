@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { TariffListService } from './tariff-list.service';
 import { SortType, Tariff } from '../models';
-import { mockTariffList } from './tarif-list.mock';
+import { mockTariffList } from '../mock';
 
 describe('TariffListService', () => {
   let service: TariffListService;
